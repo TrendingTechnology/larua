@@ -1,12 +1,17 @@
 <header>
-<nav class="navbar navbar-expand-md navbar-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-start">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    {{#if @blog.logo}}
-    <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="blog logo" class="logo left" /></a>
-    {{/if}}
+  {{#if @blog.logo}}
+    <div class="logo-mobile d-block d-sm-none d-md-none d-lg-none">
+      <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="blog logo" class="logo-nav left" /></a>
+   </div>
+
+  {{else}}
   <a href="{{@blog.url}}" class="navbar-brand headerurl">{{@blog.title}}</a>
+  {{/if}}
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
 
@@ -20,5 +25,4 @@
     </ul>
   </div>
 </nav>
-
 </header>
