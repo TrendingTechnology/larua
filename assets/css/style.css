@@ -227,6 +227,7 @@ nav {
 .nav-link {
 	color: #ebebeb !important;
 	text-shadow: 1px 1px black;
+	opacity: 0.8;
 }
 
 .menu-item.active > .nav-link {
@@ -260,7 +261,7 @@ img.cover {
 
 img.logo {
 	height: auto;
-	max-height: 100px;
+	max-height: 85px;
 	position: relative;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -672,6 +673,7 @@ iframe {
 	height: 100% !important;
 	position: relative;
 	opacity: 0.8;
+	max-height: 625px !important;
 }
 
 .tag_heading > .posttitle {
@@ -1168,6 +1170,12 @@ footer {
 		margin-top: 0;
 	}
 
+	.tag_heading_home {
+		top: 0px;
+		position: relative;
+		height: 100%;
+	}
+
 	.logo-main {
 		top: 50px;
 	}
@@ -1318,7 +1326,7 @@ footer {
 	}
 
 	.top-socials {
-		top: 100px;
+		top: 85px;
 	}
 
 	.card {
@@ -1389,6 +1397,16 @@ footer {
 
 	.row-post {
 		margin-top: -15px;
+	}
+
+	.tag_heading {
+		top: -135px;
+	}
+
+	.tag_heading_home {
+		top: 0px;
+		position: relative;
+		height: 100%;
 	}
 
 	.tag_heading > .posttitle.posttitle-author {
