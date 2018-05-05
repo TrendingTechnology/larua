@@ -275,7 +275,8 @@ img.logo {
 }
 
 .menu-item {
-    padding: 20px;
+	padding: 13px;
+	padding-top: 20px;
 }
 
 .menu-item > a {
@@ -314,6 +315,11 @@ img.logo {
 	z-index: 9999;
 	text-align: center;
 	display: block;
+}
+
+.top-socials a i {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /* **************************************
@@ -489,7 +495,7 @@ POST/ARTICLE HEADERS
 ##########################################*/
 
 .post-image {
-	height: 650px;
+	height: auto;
 	background: black;
 }
 
@@ -676,6 +682,7 @@ iframe {
 	background-size: cover;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
+	opacity: 0.8;
 }
 
 .tag_heading {
@@ -685,14 +692,24 @@ iframe {
 	height: 100% !important;
 	position: relative;
 	opacity: 0.8;
+	height: 625px !important;
 	max-height: 625px !important;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.tag_heading_post {
+	background-size: unset;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 .tag_heading > .posttitle {
     font-size: 200%;
     font-weight: 300;
 	text-shadow: none;
-	margin-top: 500px;
+	margin-top: 50vh;
 	color: black !important;
 	background: white;
 	width: 35%;
@@ -947,9 +964,6 @@ footer {
 		top: -200px;
 	}
 
-
-
-
 	.card {
 		border: 0 !important;
 	}
@@ -980,6 +994,13 @@ footer {
 
 	.tag_heading {
 		padding-top: 64px;
+		height: 300px !important;
+	}
+
+	.tag_heading_post {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
 	}
 
 	.text-main {
@@ -1184,12 +1205,23 @@ footer {
 
 	.tag_heading {
 		margin-top: 0;
+		height: 300px !important;
 	}
 
 	.tag_heading_home {
 		top: 0px;
 		position: relative;
 		height: 100%;
+	}
+
+	.tag_heading_post {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+
+	.logo-fixed {
+		opacity: 0.7;
 	}
 
 	.logo-main {
@@ -1281,7 +1313,7 @@ footer {
     }
 
     .content-images, .content-images-individual {
-				object-fit: cover;
+		object-fit: cover;
     }
 
 	.container-fluid {
@@ -1307,7 +1339,7 @@ footer {
 
 	.avatar-page-author {
 		margin-top: 30px;
-		width: 110px;
+		width: 90px;
 	}
 
 	.post-content img, .post-content p img {
@@ -1329,6 +1361,7 @@ footer {
 
 	.container-fluid {
 		max-width: 760px;
+		margin-top: 32vh;
 	}
 
 	.tag_head_wrap {
@@ -1337,12 +1370,20 @@ footer {
 
 	.tag_heading {
 		margin-top: 0;
+		height: 300px !important;
 	}
 
 	.tag_heading_home {
 		top: 0px;
 		position: relative;
-		height: 100%;
+		height: 50vh;
+	}
+
+	.tag_heading_post {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		height: 50vh;
 	}
 
 	.tag_heading > .posttitle.posttitle-author {
@@ -1352,7 +1393,11 @@ footer {
 	.tag_heading > .posttitle {
 		margin-top: 200px;
 	}
-	
+
+	.logo-fixed {
+		opacity: 0.7;
+	}
+
 	.logo-main {
 		top: 50px;
 	}
@@ -1446,14 +1491,14 @@ footer {
 	}
 
 	img.logo {
-		margin-top: 30px;
+		margin-top: 70px;
 		height: 75px;
 		max-height: 75px;
 	}
 
 	.avatar-page-author {
 		margin-top: 30px;
-		width: 110px;
+		width: 90px;
 	}
 	
 	.ml-auto {
@@ -1489,10 +1534,35 @@ footer {
 	.headerurl {
 		color: white !important;
 	}
+
+	.logo-fixed {
+		opacity: 0.7;
+	}
 	
+	.logo-nav {
+		position: fixed;
+		left: 0;
+		top: 35px;
+	}
 
 	.top-socials {
 		margin-top: 475px;
+	}
+
+	.tag_heading_post {
+		background-size: cover;
+		height: 75vh !important;
+		max-height: 75vh !important;
+	}
+
+	.tag_heading {
+		height: 75vh !important;
+		max-height: 75vh !important;
+	}
+
+	.tag_heading_home {
+		height: 75vh !important;
+		max-height: 75vh !important;
 	}
 }
 
@@ -1540,39 +1610,39 @@ EXTERNAL libraries look-n-feel
 
 .fa-facebook:hover {
 	color: #3b5998;
-	background: white;
-	border-radius: 50px;
 }
 
 
 .fa-twitter:hover {
 	color: #1dcaff;
-	background: white;
-	border-radius: 50px;
 }
 
 .fa-rss:hover {
 	color: #f26522;
+}
+
+.fa-rss {
+	color: black;
+	font-size: 1.5em;
+	padding: 10px;
 	background: white;
 	border-radius: 50px;
 }
 
-.fa-rss {
-	color: white;
-	font-size: 1.5em;
-	padding: 10px;
-}
-
 .fa-twitter {
-	color: white;
+	color: black;
 	font-size: 1.5em;
 	padding: 10px;
+	background: white;
+	border-radius: 50px;
 }
 
 .fa-facebook {
-	color: white;
+	color: black;
 	font-size: 1.5em;
 	padding: 10px;
+	background: white;
+	border-radius: 50px;
 }
 
 .fa-twitter-author, .fa-facebook-author {
