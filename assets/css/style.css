@@ -1361,11 +1361,10 @@ footer {
 
 	.container-fluid {
 		max-width: 760px;
-		margin-top: 32vh;
 	}
 
 	.tag_head_wrap {
-		height: 300px;
+
 	}
 
 	.tag_heading {
@@ -1399,7 +1398,7 @@ footer {
 	}
 
 	.logo-main {
-		top: 50px;
+		top: 12vh;
 	}
 
 	.cover-image {
@@ -1413,7 +1412,7 @@ footer {
 	}
 
 	.top-socials {
-		top: 85px;
+		top: 20vh;
 	}
 
 	.card {
@@ -1535,6 +1534,10 @@ footer {
 		color: white !important;
 	}
 
+	.logo-main {
+		top: 35vh;
+	}
+
 	.logo-fixed {
 		opacity: 0.7;
 	}
@@ -1564,6 +1567,12 @@ footer {
 		height: 75vh !important;
 		max-height: 75vh !important;
 	}
+
+	.top-socials {
+		bottom: 0;
+		top: 20vh;
+	}
+
 }
 
 /* **************************************
