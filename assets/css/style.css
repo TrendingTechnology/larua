@@ -170,9 +170,12 @@ main {
 
 .logo-nav {
 	height: 32px;
-	margin-left: 5px;
-	margin-right: 5px;
-	border-radius: 50px;
+}
+
+
+.logo-fixed {
+	opacity: 0.7;
+	position: absolute;
 }
 
 .text-main {
@@ -1219,10 +1222,6 @@ footer {
 		background-position: 50% 50%;
 	}
 
-	.logo-fixed {
-		opacity: 0.7;
-	}
-
 	.logo-main {
 		top: 50px;
 	}
@@ -1353,6 +1352,9 @@ footer {
 
 
 @media (max-width:991px) and (min-width:768px) {
+	.logo-nav {
+
+	}
 
 	header {
 		margin-top: -15px;
@@ -1390,10 +1392,6 @@ footer {
 
 	.tag_heading > .posttitle {
 		margin-top: 200px;
-	}
-
-	.logo-fixed {
-		opacity: 0.7;
 	}
 
 	.logo-main {
@@ -1535,10 +1533,6 @@ footer {
 
 	.logo-main {
 		top: 35vh;
-	}
-
-	.logo-fixed {
-		opacity: 0.7;
 	}
 	
 	.top-socials {
