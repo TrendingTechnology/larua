@@ -17,10 +17,6 @@
     {{amp_ghost_head}}
 
     {{!-- Styles'n'Scripts --}}
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">   
-    <link href='//fonts.googleapis.com/css?family=Slabo+27px:300,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <style amp-custom>
             /* **************************************
 
@@ -29,6 +25,10 @@
             *****************************************/
             html body {
                 font-family: 'Roboto' ,sans-serif;
+            }
+
+            .amp-template, .content {
+                background-image:url('{{asset "bgpattern.png"}}');
             }
 
             h1 {
@@ -134,18 +134,24 @@
             text-decoration: none;
             }
 
-            .post-image {
+            .post-image amp-img {
                 padding: 0;
                 margin: 0;
+                height: auto;
+                width: auto;
+                max-width: 100%;
+                
             }
 
             .post-subitems {
-                font-weight: 300;
                 text-align:center;
                 padding: 25px;
                 border-bottom: 1px solid #ebebeb;
                 margin-bottom: 35px;
-                font-size: 16px;
+                font-size: 14px;
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
             }
 
             .post-subitems > a
@@ -235,13 +241,13 @@
             *****************************************/
             .main-header {
                 height: 48px;
-                background: #f8f8f8 !important;
+                background: #f8f8f8;
             }
  
             /* color of clickable header */
             .headerurl {
                 text-decoration: none;
-                font-size: 16px !important;
+                font-size: 16px;
                 font-weight: 600;
                 display: block; 
                 margin-left: 10px;
@@ -412,8 +418,7 @@
             height: auto;
             float:left;
             z-index:200;
-            margin-left: 20px;
-            margin-right:10px;
+            margin-top: 25px;
         }
 
         .homepage-avatar {
@@ -423,6 +428,15 @@
 
         .post-authors {
             text-align: center;
+            display: block;
+        }
+
+        .post-authors a {
+            color: black;
+        }
+
+        .post-authors a:hover {
+            color: #979797;
         }
 
         .post-avatar {
@@ -430,6 +444,8 @@
             width: 50px;
             border-radius: 50px;
             margin-top: 20px;
+            text-align: center;
+            display: block;
         }
 
         .avatar-page {
@@ -439,7 +455,7 @@
 
         .author-name {
             font-size:200%;
-            font-weight: 300 !important;
+            font-weight: 300;
         }
 
         .author-social {
@@ -448,7 +464,7 @@
 
         .author-social > a > i {
             color:black;
-            margin: 5px !important;
+            margin: 5px;
         }
 
         .socialauthor {
@@ -461,7 +477,7 @@
         }
 
         .author-bio-text {
-            text-align: center;
+
         }
 
         /* some mobile specific junk */
@@ -492,6 +508,27 @@
             }
         }
 
+    /* Bootstrap workaround */
+    .col-md-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+
+    .col-sm-10 {
+        -ms-flex: 0 0 83.333333%;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
 
     </style>
 
@@ -503,37 +540,29 @@
 
 </head>
 
-<body class="amp-template" style="background-image:url('{{asset "bgpattern.png"}}')">
+<body class="amp-template">
     <header class="main-header">
         <nav class="brand-logo">
-            <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="blog logo" class="logo left" /></a>
             <a href="{{@blog.url}}" class="headerurl">{{@blog.title}}</a>
         </nav>
     </header>
 
-    <main class="content" role="main" style="background-image:url('{{asset "bgpattern.png"}}')">
+    <main class="content" role="main">
     {{#post}}
         <article class="post">
-            {{#if feature_image}}
 
-            <div class="post-image">
-            <img class="posthead-image" src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset "images/fallback-image.jpg"}}{{/if}}" title="{{title}}" alt="Header image of {{title}}" />
-            </div>
 
-            {{/if}}
             <header class="post-header">
                 <section class="post-meta">
                 <span class="card-title">
                     <p class="posttitle center">{{title}}</p>
                 </span>
                 <div class="post-authors text-center">
-                    {{#foreach authors}}
-                        <a href="{{url}}" title="{{name}}"><img src="{{#if profile_image}}{{img_url profile_image}}{{/if}}" class="post-avatar" alt="{{name}}" title="{{name}}"></a> 
-                    {{/foreach}}
+                        <a href="{{url}}" title="{{name}}">{{authors separator=" &bull; "}}</a> 
                 </div>
                 <div class="post-subitems">
-                    <i class="far fa-clock"></i><time datetime="{{date format="DD-MM-YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
-                    <i class="fas fa-book"></i>{{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}
+                    <time datetime="{{date format="DD-MM-YYYY"}}">{{date format="DD MMMM YYYY"}}</time> <br />
+                    {{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}
                 </div>
                 </section>
             </header>
@@ -542,7 +571,30 @@
                 {{amp_content}}
 
             </section>
-            {{> 'post/author-section'}}
+                {{#primary_author}}
+                <section class="author-profile">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2">
+                        {{#if profile_image}}
+                            <amp-img src="{{img_url profile_image}}" class="avatar" title="{{title}}" alt="Image of {{name}}" layout="responsive" height="150px" width="150px"></amp-img>
+                        {{else}}
+                            <amp-img src="{{asset "images/fallback-user.jpg"}}" class="avatar" title="{{title}}" alt="Image of {{name}}" layout="responsive" height="150px" width="150px"></amp-img>  
+                        {{/if}}
+                    </div>
+                    <div class="col-sm-10 author-bio-text">
+                        <h3>{{name}}</h3>
+                    {{#if bio}}
+                        {{bio}}
+                    {{else}}
+                        {{t "Whoops...that's not looking good. People have no idea who you are?!"}}
+                
+                    {{/if}}
+                    </div>
+                </div>
+                </section>
+
+                {{/primary_author}}
+
         </article>
  {{/post}}
     </main>
